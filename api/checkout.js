@@ -1,7 +1,7 @@
 const stripeAPI = require('../stripe');
 
 async function createCheckoutSession(req, res) {
-  const domainUrl = "https://dragonwristbands.com/";
+  const domainUrl = process.env.WEB_APP_URL;
   const { line_items, customer_email } = req.body;
   // check req body has line items and email
   if (!line_items || !customer_email) {
